@@ -2,18 +2,21 @@ import 'package:flutter/material.dart';
 import 'pantallas/principal.dart';  // Asegúrate de que FirstScreen esté correctamente definida
 import 'pantallas/segunda.dart';    // Asegúrate de que SecondScreen esté correctamente definida
 import 'pantallas/calc.dart';       // Asegúrate de que CalcScreen esté correctamente importada
+import 'pantallas/tercera.dart';
 
 class MainScreen extends StatefulWidget {
   @override
   _MainScreenState createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> { // widget main screen para navegar entre pantallas
+//Lista de widgets que almacenan nuestras pantallas utilizadas
+class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;  // Indice inicial
   final List<Widget> _screens = [
-    Principal(),  // Asegúrate de que FirstScreen esté bien importada
-    Secundaria(), // Asegúrate de que SecondScreen esté bien importada
-    Calculadora(),   // Asegúrate de que CalcScreen esté bien importada
+    Principal(),
+    Secundaria(),
+    Tercera(),
+    Calculadora(),
   ];
 
   @override
@@ -30,6 +33,7 @@ class _MainScreenState extends State<MainScreen> { // widget main screen para na
         items: [ // botones de la app con los cuales vamos a navegar entre pantallas
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Principal"),
           BottomNavigationBarItem(icon: Icon(Icons.map), label: "Geolocalizador"),
+          BottomNavigationBarItem(icon: Icon(Icons.book), label: "Agenda"),
           BottomNavigationBarItem(icon: Icon(Icons.calculate), label: "Calculadora"),
         ],
       ),

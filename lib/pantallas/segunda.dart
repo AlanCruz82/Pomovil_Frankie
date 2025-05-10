@@ -9,7 +9,7 @@ class Secundaria extends StatelessWidget {
 
   //Controlador del TextField para maniupular su texto
   var _cajaTexto = TextEditingController();
-
+  
   //Permisos de ubicación (De la documentación de pub.dev)
   Future<Position> _determinePosition() async {
     bool serviceEnabled;
