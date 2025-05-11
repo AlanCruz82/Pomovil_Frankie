@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:cupertino_calendar_picker/cupertino_calendar_picker.dart';
+import 'package:flex_color_picker/flex_color_picker.dart';
 
-class Tercera extends StatelessWidget {
+//Heredamos de un Stateful para poder modificar los colores
+class Tercera extends StatefulWidget {
+  @override
+  TerceraPantallaState createState() => TerceraPantallaState();
+}
+
+//Herencia del Stateful
+class TerceraPantallaState extends State<Tercera> {
+
+  late Color screenPickerColor;
+
+  void initState() {
+    super.initState();
+    screenPickerColor = Colors.blue;  // Material blue.
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +35,31 @@ class Tercera extends StatelessWidget {
             builder:
                 (BuildContext context) => AlertDialog(
               title: const Text('Agenda tu cita'),
-              content: const Text('Ventana para agendar tu cita'),
-              actions: <Widget>[
-
-              ],
+              content: Column(
+                children: [
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText : "Titulo de cita",
+                    ),
+                  ),
+                  Padding(
+                      padding: EdgeInsets.all(10),
+                  ),
+                  Text("Inicio cita"),
+                  CupertinoCalendarPickerButton(
+                    minimumDateTime: DateTime(2024, 7, 10),
+                    maximumDateTime: DateTime(2025, 7, 10),
+                    initialDateTime: DateTime(2024, 8, 15, 9, 41),
+                    currentDateTime: DateTime(2024, 8, 15),
+                    mode: CupertinoCalendarMode.dateTime,
+                    timeLabel: 'Ends',
+                    onDateTimeChanged: (date) {},
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

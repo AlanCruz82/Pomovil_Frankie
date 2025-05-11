@@ -38,6 +38,7 @@ dependencies:
   geolocator: ^13.0.2
   syncfusion_flutter_calendar: ^29.1.37
   cupertino_calendar_picker: ^2.2.4
+  flex_color_picker: ^3.7.1
 
 dev_dependencies:
   #sdk: flutter
