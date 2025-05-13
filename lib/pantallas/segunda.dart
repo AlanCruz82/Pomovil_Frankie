@@ -72,6 +72,9 @@ class Secundaria extends StatelessWidget {
               ),
               controller: _cajaTexto,
             ),
+            Padding(
+              padding: EdgeInsets.all(10),
+            ),
             ElevatedButton(
                 onPressed: obtenerUbicacion,
                 child: Text("Obtener mis coordenadas"))

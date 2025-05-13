@@ -24,6 +24,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: _screens[_currentIndex],  // Cargar la pantalla correspondiente al indice
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed, //Propiedad para evitar que se quede en blanco después de 3 pantallas/items
         currentIndex: _currentIndex,  // El índice actual para cambiar la pantalla
         onTap: (index) { // cuando el usuario toca un icono cambiamos el indice
           setState(() { // actualizamos el estado para mostrar la pantalla

@@ -58,6 +58,13 @@ class TerceraPantallaState extends State<Tercera> {
                   Padding(
                     padding: EdgeInsets.all(10),
                   ),
+                  ColorPicker(
+                    // Use the screenPickerColor as start and active color.
+                    color: screenPickerColor,
+                    // Update the screenPickerColor using the callback.
+                    onColorChanged: (Color color) =>
+                        setState(() => screenPickerColor = color),
+                  ),
                 ],
               ),
             ),
